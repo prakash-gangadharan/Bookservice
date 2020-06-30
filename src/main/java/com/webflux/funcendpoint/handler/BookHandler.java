@@ -1,4 +1,4 @@
-package com.example.webflux.bookservice.web;
+package com.webflux.funcendpoint.handler;
 
 import java.security.Principal;
 
@@ -8,8 +8,8 @@ import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
-import com.example.webflux.bookservice.model.Book;
-import com.example.webflux.bookservice.service.BookService;
+import com.webflux.funcendpoint.model.Book;
+import com.webflux.funcendpoint.service.BookService;
 
 import reactor.core.publisher.Mono;
 
@@ -29,8 +29,6 @@ public class BookHandler {
 	}
 	
 	public Mono<ServerResponse> findAll(ServerRequest serverRequest) {
-		
-		
 		return ServerResponse.ok()
 				.contentType(MediaType.APPLICATION_JSON)
 				.body(bookService.findAll(), Book.class);

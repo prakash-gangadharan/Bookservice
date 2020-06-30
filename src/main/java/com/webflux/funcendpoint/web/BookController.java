@@ -1,4 +1,4 @@
-package com.example.webflux.bookservice.web;
+package com.webflux.funcendpoint.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.webflux.bookservice.model.Book;
-import com.example.webflux.bookservice.service.BookService;
+import com.webflux.funcendpoint.model.Book;
+import com.webflux.funcendpoint.service.BookService;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

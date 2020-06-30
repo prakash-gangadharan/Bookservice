@@ -1,4 +1,4 @@
-package com.example.webflux.bookservice.model;
+package com.webflux.funcendpoint.model;
 
 import java.io.Serializable;
 

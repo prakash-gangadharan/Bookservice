@@ -1,9 +1,9 @@
-package com.example.webflux.bookservice.service;
+package com.webflux.funcendpoint.service;
 
 import org.springframework.stereotype.Service;
 
-import com.example.webflux.bookservice.model.Book;
-import com.example.webflux.bookservice.repository.BookRepository;
+import com.webflux.funcendpoint.model.Book;
+import com.webflux.funcendpoint.repository.BookRepository;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

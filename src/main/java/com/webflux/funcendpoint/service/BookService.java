@@ -1,6 +1,7 @@
-package com.example.webflux.bookservice.service;
+package com.webflux.funcendpoint.service;
 
-import com.example.webflux.bookservice.model.Book;
+
+import com.webflux.funcendpoint.model.Book;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
