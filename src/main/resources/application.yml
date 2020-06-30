@@ -1,0 +1,15 @@
+
+spring:
+  http:
+    mvc:log-request-details: true
+  data:
+    mongodb:
+     host: localhost
+     port: 27017
+     database: slots
+  batch:
+    job:
+      enabled: false
+server:
+  port: 8080
+  
