@@ -20,7 +20,6 @@ public class MonoFlatMap {
 		
 		Mono<List<Book>> prodMono = Mono.just(list);
 		
-		
 		prodMono
 			.map(book-> {
 				return book;

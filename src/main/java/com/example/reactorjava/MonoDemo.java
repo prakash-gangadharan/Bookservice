@@ -37,36 +37,8 @@ public class MonoDemo {
 		
 		Mono<List<Book>> prodMono = Mono.just(list);
 					
-		prodMono.subscribe(s -> System.out.println(s));
+		prodMono.subscribe(s -> System.out.println(s));	
 
-		Flux<Integer> evenNumb = Flux
-						  .range(0, 15)
-						  .filter(x -> x % 2 == 0);
-		
-		Flux<Integer> oddNumb = Flux
-						  .range(0, 15)
-						  .filter(x -> x % 2 > 0);  // ie. 1, 3, 5
-	
-//		Flux.concat(evenNumb, oddNumb)
-//			.subscribe(System.out::println);
-		
-//		evenNumb.concatWith(oddNumb)
-//				.subscribe(System.out::println);
-		
-//		Flux.merge(evenNumb, oddNumb)
-//			.subscribe(System.out::println);
-		
-//		evenNumb.mergeWith(oddNumb)
-//				.subscribe(System.out::println);
-		
-		Flux<String> fluxA = Flux.just("A", "B", "C");
-		Flux<String> fluxB = Flux.fromArray(new String[]{"D", "E", "F"});
-
-	    Flux.zip(fluxA , fluxB , (a, b) -> a + b)
-			.subscribe(System.out::println);		
-		
-		fluxA.zipWith(fluxB, (a, b) -> a+"--"+b)
-			 .subscribe(System.out::println);
 	    
 	}
 
