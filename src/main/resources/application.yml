@@ -7,9 +7,6 @@ spring:
      host: localhost
      port: 27017
      database: slots
-  batch:
-    job:
-      enabled: false
 server:
   port: 8080
   

@@ -5,10 +5,12 @@ import java.util.List;
 
 import com.example.streams.Book;
 
+import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.util.function.Tuple2;
 
+@Slf4j
 public class MonoDemo {
 
 	public static void main(String[] args) {
@@ -23,7 +25,13 @@ public class MonoDemo {
 					return Mono.just(new Book(s.getName().length(),s.getName(),35100f));
 				 });
 		
-		edited.subscribe(s -> System.out.println(s));
+	      Mono<Object> edited = mono2.flatMap( s -> {
+              s.setName("Samsungedit");
+              return new Book(s.getName().length(),s.getName(),35100f);
+           });
+		
+		//edited.subscribe(s -> System.out.println(s));
+		edited.subscribe(id -> log.info("Result: {}", id));
 				
 		mono1.subscribe(s -> System.out.println("I need to see " + s.getName()));
 				

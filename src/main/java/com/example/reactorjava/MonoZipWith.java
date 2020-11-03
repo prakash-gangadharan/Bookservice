@@ -19,5 +19,20 @@ public class MonoZipWith {
               });
 		
 		System.out.println(edited.block().toString());
+		
+		Mono.zip(existingBookMono, BookMono ,(a, b) -> a.equals(b) ).subscribe(System.out::println); 
+		
+		Mono.zip(existingBookMono, BookMono ,
+		    (existingBook, book) -> new Book(existingBook.getId(), book.getName(), book.getPrice()))
+		    .flatMap(s -> {return Mono.just(s);})
+		    .subscribe(System.out::println); 
+		
+		Mono.zip(existingBookMono, BookMono)
+		.flatMap(tuple ->{
+		    Book exBook = tuple.getT1();
+		    Book book = tuple.getT2();
+		    return  Mono.just(new Book(exBook.getId(), book.getName(), book.getPrice()));
+		}) .subscribe(System.out::println); 
+        
 	}
 }

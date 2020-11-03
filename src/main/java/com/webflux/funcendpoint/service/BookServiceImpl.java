@@ -5,10 +5,12 @@ import org.springframework.stereotype.Service;
 import com.webflux.funcendpoint.model.Book;
 import com.webflux.funcendpoint.repository.BookRepository;
 
+import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
+@Slf4j
 public class BookServiceImpl implements BookService{
 	private BookRepository bookRepository;
 	
@@ -23,6 +25,11 @@ public class BookServiceImpl implements BookService{
 
 	@Override
 	public Flux<Book> findAll() {
+	       log.error("log.error >> log.error");
+	        log.debug("log.debug >> log.debug");
+	        log.info("log.info >> log.info");
+	        log.warn("log.warn >> log.warn");
+	        
 		return bookRepository.findAll();
 	}
 
